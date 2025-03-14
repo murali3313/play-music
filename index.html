@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .button {
+            display: block;
+            width: 200px;
+            height: 80px;
+            margin: 10px auto;
+            font-size: 20px;
+            background-color: lightblue;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: deepskyblue;
+        }
+        .bg-control {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Music Player</h1>
+    <button class="button" onclick="playMusic('music1.mp3')">Music 1</button>
+    <button class="button" onclick="playMusic('music2.mp3')">Music 2</button>
+    <button class="button" onclick="playMusic('music3.mp3')">Music 3</button>
+    <button class="button" onclick="playMusic('music4.mp3')">Music 4</button>
+    <button class="button" onclick="playMusic('music5.mp3')">Music 5</button>
+    <button class="button" onclick="playMusic('music6.mp3')">Music 6</button>
+    <button class="button" onclick="playMusic('music7.mp3')">Music 7</button>
+    
+    <div class="bg-control">
+        <label>
+            <input type="checkbox" id="bg-music-toggle" onclick="toggleBgMusic()"> Play Background Music
+        </label>
+    </div>
+
+    <script>
+        let currentAudio = null;
+        let bgMusic = new Audio('background.mp3');
+        bgMusic.loop = true;
+
+        function playMusic(file) {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+            currentAudio = new Audio(file);
+            currentAudio.play();
+        }
+
+        function toggleBgMusic() {
+            let bgToggle = document.getElementById('bg-music-toggle');
+            if (bgToggle.checked) {
+                bgMusic.play();
+            } else {
+                bgMusic.pause();
+            }
+        }
+    </script>
+</body>
+</html>
