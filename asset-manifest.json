@@ -1,18 +1,21 @@
 {
   "files": {
     "main.css": "/play-music/static/css/main.f855e6bc.css",
-    "main.js": "/play-music/static/js/main.81f4e5e7.js",
+    "main.js": "/play-music/static/js/main.18479d7f.js",
     "static/js/453.b2af043f.chunk.js": "/play-music/static/js/453.b2af043f.chunk.js",
+    "static/media/soft-inspire.mp3": "/play-music/static/media/soft-inspire.9839de393e8b6f4b55b1.mp3",
     "static/media/background.mp3": "/play-music/static/media/background.43ed84399f5d1f201aa1.mp3",
+    "static/media/baby-shark.mp3": "/play-music/static/media/baby-shark.1ecc65d22383f18d20e0.mp3",
     "static/media/toca-toca.mp3": "/play-music/static/media/toca-toca.28ab12c350daf714b976.mp3",
     "static/media/chak-doom.mp3": "/play-music/static/media/chak-doom.086b4ac2dad36c099544.mp3",
+    "static/media/applause.mp3": "/play-music/static/media/applause.d9f02d42a1b926f91399.mp3",
     "index.html": "/play-music/index.html",
     "main.f855e6bc.css.map": "/play-music/static/css/main.f855e6bc.css.map",
-    "main.81f4e5e7.js.map": "/play-music/static/js/main.81f4e5e7.js.map",
+    "main.18479d7f.js.map": "/play-music/static/js/main.18479d7f.js.map",
     "453.b2af043f.chunk.js.map": "/play-music/static/js/453.b2af043f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.81f4e5e7.js"
+    "static/js/main.18479d7f.js"
   ]
 }
