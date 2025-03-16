@@ -1,11 +1,15 @@
 import React, { useState, useRef } from "react";
+<<<<<<< HEAD
 import toca from "./music/toca-toca.mp3"
 import doom from "./music/chak-doom.mp3"
 import bgmusic from "./music/background.mp3"
+=======
+>>>>>>> 3d52def (adding baby shark)
 
 const MusicPlayer = () => {
   const [currentAudio, setCurrentAudio] = useState(null);
   const [currentFile, setCurrentFile] = useState(null);
+<<<<<<< HEAD
   const [currentBgFile, setCurrentBgFile] = useState(null);
   const bgAudioRef1 = useRef(new Audio(bgmusic));
   bgAudioRef1.current.loop = true;
@@ -21,6 +25,12 @@ const MusicPlayer = () => {
     { file: bgmusic, name: "Piano" },
 
   ];
+=======
+  const [bgPlaying, setBgPlaying] = useState(false);
+  const bgAudioRef = useRef(new Audio("background.mp3"));
+  bgAudioRef.current.loop = true;
+
+>>>>>>> 3d52def (adding baby shark)
   const toggleMusic = (file) => {
     if (currentAudio && currentFile === file) {
       if (!currentAudio.paused) {
@@ -40,6 +50,7 @@ const MusicPlayer = () => {
     newAudio.play();
   };
 
+<<<<<<< HEAD
   const toggleBgMusic = (file) => {
     if (bgAudio && currentBgFile === file) {
       if (!bgAudio.paused) {
@@ -120,6 +131,39 @@ const MusicPlayer = () => {
             </div>
           ))}
         </div>
+=======
+  const toggleBgMusic = () => {
+    if (bgPlaying) {
+      bgAudioRef.current.pause();
+    } else {
+      bgAudioRef.current.play();
+    }
+    setBgPlaying(!bgPlaying);
+  };
+
+  const adjustBgVolume = (event) => {
+    bgAudioRef.current.volume = event.target.value;
+  };
+
+  return (
+    <div style={{ textAlign: "center", fontFamily: "Arial, sans-serif" }}>
+      <h1>Music Player</h1>
+      {["music1.mp3", "music2.mp3", "music3.mp3", "music4.mp3", "music5.mp3", "music6.mp3", "music7.mp3"].map((file, index) => (
+        <div key={index}>
+          <button
+            style={{ width: 200, height: 80, margin: 10, fontSize: 20, backgroundColor: "lightblue", border: "none", cursor: "pointer" }}
+            onClick={() => toggleMusic(file)}
+          >
+            Music {index + 1}
+          </button>
+        </div>
+      ))}
+      <div style={{ marginTop: 20 }}>
+        <label>
+          <input type="checkbox" checked={bgPlaying} onChange={toggleBgMusic} /> Play Background Music
+        </label>
+        <input type="range" min="0" max="1" step="0.1" defaultValue="1" onChange={adjustBgVolume} style={{ marginLeft: 10 }} />
+>>>>>>> 3d52def (adding baby shark)
       </div>
     </div>
   );
