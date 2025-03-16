@@ -30,6 +30,8 @@ jobs:
     - run: npm run build --if-present
     - if: matrix.node-version == '22.x' && github.event_name == 'push'
       name: Deploy to GitHub Pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "muralidharan.nandhakumar@gmail.com"
