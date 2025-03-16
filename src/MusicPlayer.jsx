@@ -7,7 +7,6 @@ const MusicPlayer = () => {
   const [currentAudio, setCurrentAudio] = useState(null);
   const [currentFile, setCurrentFile] = useState(null);
   const [currentBgFile, setCurrentBgFile] = useState(null);
-  const [bgPlaying, setBgPlaying] = useState(false);
   const bgAudioRef1 = useRef(new Audio(bgmusic));
   bgAudioRef1.current.loop = true;
 
