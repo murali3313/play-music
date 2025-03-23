@@ -6,6 +6,13 @@ import bgmusic from "./music/background.mp3"
 import applause from "./music/applause.mp3"
 import softInspire from "./music/soft-inspire.mp3"
 import flowerIntro from "./music/flowers-intro.mp3"
+import villaneous from "./music/villaneous.mp3"
+import happyEnding from "./music/happy-ending.mp3"
+import funUpbeat from "./music/funny-upbeat.mp3"
+import idea from "./music/idea.mp3"
+import chikki from "./music/chikichiki.mp3"
+import barbie from "./music/barbie.mp3"
+import goldenSparrow from "./music/GoldenSparrow.mp3"
 
 const PlayStatus = {
   "PAUSED": "PAUSED",
@@ -24,13 +31,20 @@ const MusicPlayer = () => {
     { file: toca, name: "Toca Toca" },
     { file: doom, name: "Chak Dhoom" },
     { file: babyShark, name: "Baby shark" },
+    { file: villaneous, name: "Villaneous" },
+    { file: flowerIntro, name: "Flower Intro" },
+    { file: happyEnding, name: "Happy ending" },
+    { file: idea, name: "Idea" },
+    { file: chikki, name: "Chikki" },
+    { file: barbie, name: "Barbie" },
+    { file: goldenSparrow, name: "Golden Sparrow" },
 
   ];
   const bgMusicConfigs = [
     { file: bgmusic, name: "Piano" },
     { file: applause, name: "Applause" },
     { file: softInspire, name: "Soft Inspire" },
-    { file: flowerIntro, name: "Flower Intro" },
+    { file: funUpbeat, name: "Funny Upbeat" },
 
   ];
 
@@ -43,11 +57,22 @@ const MusicPlayer = () => {
 
   }
 
+  const fadeOutAndPause = (audio) => {
+    let fadeInterval = setInterval(() => {
+      if (audio.volume > 0.1) {
+        audio.volume -= 0.1; // Reduce volume gradually
+      } else {
+        clearInterval(fadeInterval);
+        audio.pause();
+        audio.volume = 1; // Reset volume for next play
+      }
+    }, 150); // Fade out over 1 second (100ms * 10 steps)
+  };
   const toggleMusic = (file) => {
     if (currentAudio && currentFile === file) {
       if (!currentAudio.paused) {
         setCurrentAudioStatus(PlayStatus.PAUSED)
-        currentAudio.pause();
+        fadeOutAndPause(currentAudio)
       } else {
         setCurrentAudioStatus(PlayStatus.PLAYING)
         currentAudio.play();
@@ -55,7 +80,7 @@ const MusicPlayer = () => {
       return;
     }
     if (currentAudio) {
-      currentAudio.pause();
+      fadeOutAndPause(currentAudio)
       setCurrentAudioStatus(PlayStatus.PAUSED)
       currentAudio.currentTime = 0;
     }
@@ -69,7 +94,7 @@ const MusicPlayer = () => {
   const toggleBgMusic = (file) => {
     if (bgAudio && currentBgFile === file) {
       if (!bgAudio.paused) {
-        bgAudio.pause();
+        fadeOutAndPause(bgAudio)
         setCurrentBGAudioStatus(PlayStatus.PAUSED)
       } else {
         setCurrentBGAudioStatus(PlayStatus.PLAYING)
@@ -78,7 +103,7 @@ const MusicPlayer = () => {
       return;
     }
     if (bgAudio) {
-      bgAudio.pause();
+      fadeOutAndPause(bgAudio)
       setCurrentBGAudioStatus(PlayStatus.PAUSED)
       bgAudio.currentTime = 0;
     }
