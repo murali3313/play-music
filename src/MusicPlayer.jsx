@@ -5,6 +5,7 @@ import babyShark from "./music/baby-shark.mp3"
 import bgmusic from "./music/background.mp3"
 import applause from "./music/applause.mp3"
 import softInspire from "./music/soft-inspire.mp3"
+import flowerIntro from "./music/flowers-intro.mp3"
 
 const PlayStatus = {
   "PAUSED": "PAUSED",
@@ -29,6 +30,7 @@ const MusicPlayer = () => {
     { file: bgmusic, name: "Piano" },
     { file: applause, name: "Applause" },
     { file: softInspire, name: "Soft Inspire" },
+    { file: flowerIntro, name: "Flower Intro" },
 
   ];
 
