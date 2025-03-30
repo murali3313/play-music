@@ -13,6 +13,7 @@ import idea from "./music/idea.mp3"
 import chikki from "./music/chikichiki.mp3"
 import barbie from "./music/barbie.mp3"
 import goldenSparrow from "./music/GoldenSparrow.mp3"
+import sad from "./music/sad.mp3"
 
 const PlayStatus = {
   "PAUSED": "PAUSED",
@@ -32,6 +33,7 @@ const MusicPlayer = () => {
     { file: doom, name: "Chak Dhoom" },
     { file: babyShark, name: "Baby shark" },
     { file: villaneous, name: "Villaneous" },
+    { file: sad, name: "Sad" },
     { file: flowerIntro, name: "Flower Intro" },
     { file: happyEnding, name: "Happy ending" },
     { file: idea, name: "Idea" },
