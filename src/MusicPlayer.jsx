@@ -16,6 +16,7 @@ import goldenSparrow from "./music/GoldenSparrow.mp3"
 import sad from "./music/sad.mp3"
 import national from "./music/national.mp3"
 import yung from "./music/yung.mp3"
+import loveme from "./music/loveme.mp3"
 
 
 const PlayStatus = {
@@ -55,6 +56,8 @@ const MusicPlayer = () => {
     { file: applause, name: "Applause" },
     { file: softInspire, name: "Soft Inspire" },
     { file: funUpbeat, name: "Funny Upbeat" },
+    { file: loveme, name: "Love me" },
+    
 
   ];
 
