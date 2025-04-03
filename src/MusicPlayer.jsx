@@ -17,6 +17,7 @@ import sad from "./music/sad.mp3"
 import national from "./music/national.mp3"
 import yung from "./music/yung.mp3"
 import loveme from "./music/loveme.mp3"
+import shape from "./music/shape.mp3"
 
 
 const PlayStatus = {
@@ -46,7 +47,7 @@ const MusicPlayer = () => {
     { file: goldenSparrow, name: "Golden Sparrow" },
     { file: national, name: "National Anthem" },
         { file: yung, name: "Yeda Yung" },
-
+        { file: shape, name: "Shape of you" },
 
     
 
